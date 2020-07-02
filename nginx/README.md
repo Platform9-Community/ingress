@@ -121,14 +121,14 @@ Events:
 
 ```
 
-The Service p9-react-app within Kubernetes namespace p9-react-app is now exposed outside via hostname pf9app.platform9.horse. 
+The Service p9-react-app within Kubernetes namespace p9-react-app is now exposed outside via hostname pf9app.platform9.horse. One should make a local hosts file entry to visit this URL from the LAN. Modify the Manifest to set the hostname of your choice before deploying the app manifest on the cluster.
 
 
 ![add-cred-dhub](https://github.com/KoolKubernetes/ingress/blob/master/nginx/images/app-ingress.png)
 
 
 
-Ingress controller should be running on a node which has enough resources and resource utilization on the ingress controller pod should be monitored over the period of its lifetime. It can be further configured to add authentication, TLS termination so on and so forth.
+Ingress controller should be running on a node which has enough resources. Further resource utilization on the ingress controller pod should be monitored over the period of its lifetime. It can be further configured to add authentication, TLS termination so on and so forth.
 
 
 
