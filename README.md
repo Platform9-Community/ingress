@@ -3,4 +3,4 @@ Ingress is used as entry point for clients to publicly access the services on a 
 
 Ingress overcome restrictions with using kubernetes serivices like nodePort where you can only use port 30000 and above. Cloud loadbalancers also overcomes this restriction but at higher cost as the services that are exposed grow the number of load balancers that required also grow along with them. Cloud load balancers are expensive. This is where an ingress controller has an advantage as it can expose multiple services at a time using a single cloud loadbalancer.
 
-Architecturaly the cloud loadbalancer talks with ingress which in turn routes the traffic to an underlying service on kubernetes.
+The cloud loadbalancer talks with ingress which in turn routes the traffic to an underlying service on kubernetes. In kubernetes both loadbalancer and ingress are services. On public cloud ingress controller can provision cloud loadbalancer for themselves whereas on private cloud clusters use metallb as loadbalancer.
