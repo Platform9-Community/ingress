@@ -133,5 +133,7 @@ Ingress controller should be running on a node which has enough resources. It ca
 
 
 # Reference
+```bash
 https://kubernetes.github.io/ingress-nginx/examples/
 https://kubernetes.github.io/ingress-nginx/
+```
