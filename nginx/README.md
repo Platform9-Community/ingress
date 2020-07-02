@@ -1,6 +1,6 @@
 # NGINX ingress controller deployment on Platform9 Managed Kubernetes Freedom Plan
  
-Here we are going to deploy well known NGINX ingress controller on top of platform9 managed kubernetes freedom tier. This deployment is going to require a PMK/FT 4.3 cluster (kubernetes 1.16+) with metallb deployed on baremetal servers/VMs running Ubuntu 18.04 or Centos 7.6.
+Here we are going to deploy well known NGINX ingress controller on top of platform9 managed kubernetes freedom tier. This deployment is going to require a PMK/FT 4.3 cluster (kubernetes 1.16+) with metallb loadbalancer on baremetal servers/VMs running on Ubuntu 18.04 or Centos 7.6.
 
 # Deployment
 
@@ -30,7 +30,7 @@ rolebinding.rbac.authorization.k8s.io/ingress-nginx-admission created
 serviceaccount/ingress-nginx-admission created
 ```
 
-Validate the ingress controller pods are running. Notice that NGINX ingress has got the load balancer IP from metallb
+Validate the ingress controller pods are running. Notice that NGINX ingress has got the load balancer IP from metallb.
 ```bash
 $ kubectl get ns ingress-nginx
 NAME            STATUS   AGE
@@ -60,13 +60,13 @@ NAME                                       COMPLETIONS   DURATION   AGE
 job.batch/ingress-nginx-admission-create   1/1           6s         92s
 job.batch/ingress-nginx-admission-patch    1/1           8s         92s
 ```
-Clone the cicd repo to test the ingress controller with our favorite pf9reactapp:
+Clone the cicd repo to test the ingress controller with our favorite pf9reactapp.
 
 ```bash
 $ git clone https://github.com/KoolKubernetes/cicd.git
 ```
 
-Deploy the app with ingress resource to leverage NGINX ingress controller
+Deploy the app with ingress resource to leverage NGINX ingress controller.
 ```bash
 $ kubectl apply -f cicd/jenkins/webapp01/k8s/ingress-nginx-app.yaml
 namespace/p9-react-app created
@@ -99,7 +99,7 @@ NAME             HOSTS                    ADDRESS         PORTS   AGE
 pf9app-routing   pf9app.platform9.horse   10.128.229.21   80      40m
 ```
 
-The ingress resource gets created as shown below
+The ingress resource gets created as shown below.
 ```bash
 $ kubectl describe ingress -n p9-react-app
 Name:             pf9app-routing
@@ -128,7 +128,7 @@ The Service p9-react-app within Kubernetes namespace p9-react-app is now exposed
 
 
 
-Ingress controller should be running on a node which has enough resources. Further resource utilization on the ingress controller pod should be monitored over the period of its lifetime. It can be further configured to add authentication, TLS termination so on and so forth.
+Ingress controller should be running on a node which has enough resources. It can be further configured to add authentication, TLS termination so on and so forth.
 
 
 
