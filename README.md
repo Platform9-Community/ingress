@@ -1,2 +1,6 @@
-# ingress
-ingress controllers
+# Ingress
+Ingress is used as entry point for clients to publicly access the services on a kubernetes cluster. In a absence of an ingress the services are typically exposed to outside via load balancer ip addresses which means a public ip address was required by each kubernetes service that was exposed outside. Ingress controllers not only solve this problem but also provide additional features like SSL termination. Ingress controller can typically do both host based and path based routing to kubernetes services which is more often required by organizations to expose services to their customers.
+
+Ingress overcome restrictions with using kubernetes serivices like nodePort where you can only use port 30000 and above. Cloud loadbalancers also overcomes this restriction but at higher cost as the services that are exposed grow the number of load balancers that required also grow along with them. Cloud load balancers are expensive. This is where an ingress controller has an advantage as it can expose multiple services at a time using a single cloud loadbalancer.
+
+Architecturaly the cloud loadbalancer talks with ingress which in turn routes the traffic to an underlying service on kubernetes.
