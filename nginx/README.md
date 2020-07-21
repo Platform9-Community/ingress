@@ -9,7 +9,7 @@ Clone the ingress repository in KoolKubernetes organization and apply it on your
 $ git clone https://github.com/KoolKubernetes/ingress.git
 
 
-$ kubectl apply -f nginx/nginx-v0.33.0.yaml
+$ kubectl apply -f ingress/nginx/nginx-v0.33.0.yaml
 namespace/ingress-nginx created
 serviceaccount/ingress-nginx created
 configmap/ingress-nginx-controller created
