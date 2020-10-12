@@ -1,6 +1,6 @@
 # NGINX ingress controller deployment on Platform9 Managed Kubernetes Freedom Plan
  
-Here we are going to deploy well known NGINX ingress controller on top of platform9 managed kubernetes freedom tier. This deployment is going to require a PMK/FT 4.3 cluster (kubernetes 1.16+) with metallb loadbalancer on baremetal servers/VMs running on Ubuntu 18.04 or Centos 7.6.
+Here we are going to deploy the well known NGINX ingress controller on top of the Platform9 Managed Kubernetes freedom tier. This deployment is going to require a PMK/FT 4.3 cluster (Kubernetes 1.16+) with metallb loadbalancer on baremetal servers/VMs running on Ubuntu 18.04 or Centos 7.6.
 
 # Deployment
 
